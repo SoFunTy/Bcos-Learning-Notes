@@ -79,7 +79,7 @@ Check docker status, like this:
 ![docker status](./images/2.png)<br>
 Please refer to the official website for more information.
 <br>
-
+***
 ## Configuring Bcos
 
 Cloning file
@@ -140,7 +140,7 @@ write Genesis Node into contract
 <br>![config2](./images/9.png)<br>
 We can see $docker ps -a
 <br>![ps](./images/10.png)<br>
-
+***
 ## New prot into
 ```bash
 	$ cd bcos/docker
@@ -173,7 +173,7 @@ block growth indicates that the network is working properly
 	$ babel-node monitor.js
 ```
 end of the environment configuration
-
+***
 ## Deployment contract
 contract file in bcos/tool/
 <br>![contract](./images/11.png)<br>
@@ -207,8 +207,8 @@ Deployment contract, config.js *prot and ip* must be the same as bcos/docker/nod
 ```
 <br>![contract](./images/16.png)<br>
 if want to deployment other contract, do it like this(is one way)
-*ps:* Hope this call you when you want quickStart.(maybe not well)
-
+**ps:** Hope this call you when you want quickStart.(maybe not well)
+***
 Summarizes the train of thought
 ==============================
 *First, docker is a convenient container that reduces many of the problems that arise in development testing and implementation deployment depending on the environment.While building bcos on docker can achieve a single machine with multiple nodes and only consume few resources. *
@@ -218,6 +218,7 @@ Summarizes the train of thought
 *The last, if you want to understand it carefully*    DO THIS [The white paper](https://github.com/bcosorg/bcos/blob/master/doc/manual/manual.md)
 *Maybe I'll do it more than once*
 <br>
+***
 ## Problems That You May Have
 Q：
 If you see your port is busy or other you can (sudo apt-get install net-tools  & netstat -ap | grep $you port and kill -9 PID) 
