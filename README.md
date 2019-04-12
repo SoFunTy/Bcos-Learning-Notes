@@ -7,7 +7,7 @@ Based on ubuntu18.10 OS
 ## **Let’s start!**
 
 ### Install Depends before play
-	```bash
+```bash
 	sudo apt-get install git
 	sudoapt-get install -y nodejs 
 	sudoapt-get install -y npm
@@ -19,7 +19,7 @@ Based on ubuntu18.10 OS
 	sudo cp solc-static-linux  /usr/bin/solc
 	sudo chmod +x /usr/bin/solc
 	sudo cnpm install -g ethereum-console
-	```
+```
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
@@ -32,22 +32,23 @@ You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 	gnupg-agent \
 	software-properties-common
 ```
-<br>
+
 ②Add Docker’s official GPG key
-<br>
 ```bash
 	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
 ```
-<br>
+
 ③by searching for the last 8 characters of the fingerprint.
 ```bash
 	$sudo apt-key fingerprint 0EBFCD88      
 ```
+
 ④softwware update
 ```bash
 	$sudo apt-get update
 	$apt list –upgradable
 ```
+
 ⑤set up the stable repository
 ```bash
 	$sudo add-apt-repository \
@@ -55,20 +56,23 @@ You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
     (lsb_release -cs) \
     stable"
 ```
-<br>
+
 ##### ⑥INSTALL NOW
 ```bash
 	$sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
+
 ⑦Add your user to the docker group
 ```bash	
 	$ sudo groupadd docker
 	$ sudo usermod -aG docker $USER
 ```
+
 ⑧PowerBoot
 ```bash	
 	$sudo systemctl enable docker     
 ```
+
 Check docker status, like this:
  (if you see anything like “Permission denied”,  maybe you need log back in)
 <br>![docker status](./images/1.png)<br>
@@ -77,6 +81,7 @@ Please refer to the official website for more information.
 <br>
 
 ## Configuring Bcos
+
 Cloning file
 ```bash	
 	$git clone https://github.com/bcosorg/bcos
