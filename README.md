@@ -19,87 +19,133 @@ Based on ubuntu18.10 OS
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 use packages repository
+```bash
 	$sudo apt-get install \
 	apt-transport-https \
 	ca-certificates \
 	curl \
 	gnupg-agent \
 	software-properties-common
+```
 Add Docker’s official GPG key
+```bash
 	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
+```
 by searching for the last 8 characters of the fingerprint.
+```bash
 	$sudo apt-key fingerprint 0EBFCD88      
+```
 softwware update
+```bash
 	$sudo apt-get update
 	$apt list –upgradable
+```
 set up the stable repository
+```bash
 	$sudo add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     (lsb_release -cs) \
     stable"
+```
 ##### INSTALL NOW
+```bash
 	$sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
 Add your user to the docker group
+```bash	
 	$ sudo groupadd docker
 	$ sudo usermod -aG docker $USER
+```
 PowerBoot
+```bash	
 	$sudo systemctl enable docker     
+```
 Check docker status, like this:
  (if you see anything like “Permission denied”,  maybe you need log back in)
 
 Please refer to the official website for more information.
 ## Configuring Bcos
 Cloning file
+```bash	
 	$git clone https://github.com/bcosorg/bcos
 	$cd bcos/docker
+```
 Set Creation block config file into node-0
+```bash	
 	$./scripts/genConfig.sh
+```
 
 launch docker container
+```bash
 	$ ./scripts/start_bcos_docker.sh $PWD/node-0
+```
  Correct state:
 
+```bash
 	$ cd ../systemcontractv2
 	$ cnpm install
 	(sudo chown -R $USER:$(id -gn $USER) /home/xubi/.config)
+```
 You can input again to check
 
  modification bcos/docker/node-0/config.js  "Port": 35500”
 Of course, you can open the file to modify
+```bash
 	$ sed -i 's/127.0.0.1:8545/127.0.0.1:35500/' config.js
 	$ babel-node deploy.js
+```
 将输出中，SystemProxy合约地址记下来，例如 SystemProxy合约地址 0xff27dc5cc5144c626b9fdc26b2f292d9df062470
 修改docker/node-0/config.json中systemproxyaddress为上一步骤记录的SystemProxy合约地址 
+```bash
 	$ sed -i 's/"systemproxyaddress":"0x0"/"systemproxyaddress":"0xff27dc5cc5144c626b9fdc26b2f292d9df062470"/' ../docker/node-0/config.json
+```
 
 检查node-0/config.json中系统合约字段是否正确
+```bash
 	$ cat ../docker/node-0/config.json | grep systemproxyaddress
+```
 
 重启node-0
+```bash
 	$ docker restart $(docker ps -a | grep bcos-node-0 | awk 'NR==1{print$1}')
+```
 
 创世节点信息写入合约
+```bash
 	$ babel-node tool.js NodeAction registerNode ../docker/node-0/node.json
+```
 
 We can see $docker ps -a
 
 
 ## New prot into
+```bash
 	$ cd bcos/docker
+```
 genConfig.sh的参数分别是除创世节点外的组网节点数和创世节点配置文件路径
+```bash
 	$ ./scripts/genConfig.sh 1 node-0
+```
 新节点入网
+```bash
 	$ cd bcos/systemcontractv2
+```
 新加节点node-1信息写入合约
+```bash
 	$ babel-node tool.js NodeAction registerNode ../docker/node-1/node.json 
+```
 
 启动新加入节点node-1，参数为新节点配置文件完整路径
+```bash
 	$ cd ../docker & ./script/start_bcos_docker.sh $PWD/node-0
+```
 要加入更多节点只需要重复步骤2.2-2.3，启动新节点时参数改为新节点配置文件路径即可
 查看工作状态
 块高增长说明网络工作正常
+```bash
 	$ cd ../systemcontractv2
 	$ babel-node monitor.js
+```
 
 
 
@@ -117,8 +163,10 @@ contract HelloWorld{
     }
 }
 into bcos/tool/HelloWorld.sol
+```bash
 	$ cnpm install
 	$ babel-node deploy.sol HelloWorld
+```
 you can see
 xubi@xubi-Standard:~/bcos/tool$ babel-node deploy.js HelloWorld
 RPC=http://127.0.0.1:35500
