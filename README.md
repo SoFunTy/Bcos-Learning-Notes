@@ -7,7 +7,7 @@ Based on ubuntu18.10 OS
 ## **Let’s start!**
 
 ### Install Depends before play
-```bash
+```ruby
 	sudo apt-get install git
 	sudoapt-get install -y nodejs 
 	sudoapt-get install -y npm
