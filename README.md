@@ -3,7 +3,7 @@
 Based on ubuntu18.10 OS
 ### Let’s start!
 #### Install Depends before play
-```
+	```
 	sudo apt-get install git
 	sudoapt-get install -y nodejs 
 	sudoapt-get install -y npm
@@ -15,19 +15,20 @@ Based on ubuntu18.10 OS
 	sudo cp solc-static-linux  /usr/bin/solc
 	sudo chmod +x /usr/bin/solc
 	sudo cnpm install -g ethereum-console
-```
+	```
 
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 <br>
 use packages repository
-<br>
+	```
 	$sudo apt-get install \
 	apt-transport-https \
 	ca-certificates \
 	curl \
 	gnupg-agent \
 	software-properties-common
+	```
 ##### Add Docker’s official GPG key
 	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
 ##### by searching for the last 8 characters of the fingerprint.
