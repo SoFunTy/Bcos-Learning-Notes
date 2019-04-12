@@ -15,9 +15,9 @@ Based on ubuntu18.10 OS
 	sudo chmod +x /usr/bin/solc
 	sudo cnpm install -g ethereum-console
 
-### Install Docker
- You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
-###### use packages repository#
+## Install Docker
+You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
+use packages repository
 	$sudo apt-get install \
 	apt-transport-https \
 	ca-certificates \
@@ -43,13 +43,11 @@ Based on ubuntu18.10 OS
 	$ sudo usermod -aG docker $USER
 ##### PowerBoot
 	$sudo systemctl enable docker     
-
 ##### Check docker status, like this:
 ##### (if you see anything like “Permission denied”,  maybe you need log back in)
 
-
 ##### Please refer to the official website for more information.
-##### Configuring Bcos
+## Configuring Bcos
 ##### Cloning file
 	$git clone https://github.com/bcosorg/bcos
 	$cd bcos/docker
