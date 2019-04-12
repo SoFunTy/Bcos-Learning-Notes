@@ -1,6 +1,7 @@
 **Build bcos on docker**
 ====================
 Based on ubuntu18.10 OS
+![ubuntu icon](./images/0.png)
 **Let’s start!**
 #### Install Depends before play
 ```bash
@@ -18,7 +19,7 @@ Based on ubuntu18.10 OS
 ```
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
-use packages repository
+①use packages repository
 ```bash
 	$sudo apt-get install \
 	apt-transport-https \
@@ -27,36 +28,36 @@ use packages repository
 	gnupg-agent \
 	software-properties-common
 ```
-Add Docker’s official GPG key
+②Add Docker’s official GPG key
 ```bash
 	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
 ```
-by searching for the last 8 characters of the fingerprint.
+③by searching for the last 8 characters of the fingerprint.
 ```bash
 	$sudo apt-key fingerprint 0EBFCD88      
 ```
-softwware update
+④softwware update
 ```bash
 	$sudo apt-get update
 	$apt list –upgradable
 ```
-set up the stable repository
+⑤set up the stable repository
 ```bash
 	$sudo add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     (lsb_release -cs) \
     stable"
 ```
-##### INSTALL NOW
+##### ⑥INSTALL NOW
 ```bash
 	$sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
-Add your user to the docker group
+⑦Add your user to the docker group
 ```bash	
 	$ sudo groupadd docker
 	$ sudo usermod -aG docker $USER
 ```
-PowerBoot
+⑧PowerBoot
 ```bash	
 	$sudo systemctl enable docker     
 ```
@@ -64,6 +65,7 @@ Check docker status, like this:
  (if you see anything like “Permission denied”,  maybe you need log back in)
 
 Please refer to the official website for more information.
+
 ## Configuring Bcos
 Cloning file
 ```bash	
