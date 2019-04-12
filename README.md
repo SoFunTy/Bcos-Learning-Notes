@@ -2,7 +2,7 @@
 ====================
 Based on ubuntu18.10 OS
 
-<br>![ubuntu icon](./images/0.png)![ubuntu icon](./images/00.png)<br>
+![ubuntu icon](./images/0.png)![ubuntu icon](./images/00.png)
 
 ## **Let’s start!**
 
@@ -211,6 +211,7 @@ if want to deployment other contract, do it like this(is one way)
 ***
 Summarizes the train of thought
 ==============================
+
 *First, docker is a convenient container that reduces many of the problems that arise in development testing and implementation deployment depending on the environment.While building bcos on docker can achieve a single machine with multiple nodes and only consume few resources. *
 <br>
 *The second，bcos is an open source block chain project, it is relatively easy to build, as you understand the construction of the distributed system (such as DFS, KASS, Andrew). The structures, bcos more nodes are relatively easy to understand, the system proxy address, dfsNode, dfsGroup, networkid, since is a cluster, the conditions of the nodes need to be unified, to limit their position in the cluster.*
@@ -220,12 +221,34 @@ Summarizes the train of thought
 <br>
 ***
 ## Problems That You May Have
-Q：
-If you see your port is busy or other you can (sudo apt-get install net-tools  & netstat -ap | grep $you port and kill -9 PID) 
+**Problem 01**:if Command window allow say npm ERROR/ cnpm ERROR...
+search by Google or Baidu ... it will be more the solution
+**Problem 02**:if Command window allow say port is busy
+cheack you network and stat, can use
 
+```bash
+	sudo apt-get install net-tools  
+	netstat -ap | grep $you port
+	kill -9 PID
+```
+**Problem 03**:some dependent packages are not installed
+Make sure you have the first ones installed
+or you can insatll dependent packages by bcos/script/install_deps.sh
 
-Q：
-sudo yum install -y openssl openssl-devel
-chmod +x scripts/install_deps.sh
-./scripts/install_deps.sh
-
+```bash
+	sudo apt-get install -y openssl
+	cd bcos
+	chmod +x scripts/install_deps.sh
+	./scripts/install_deps.sh
+```
+**Problem 04**:if you see you contract compilation fails
+check contract version >=0.5.7
+you can check it in [remix](https://remix.ethereum.org/) easy
+**Problem 05**:if Unable to connect ip:prot
+check bcos/tool/config.js ip、prot the same as bcos/docker/node-0/config.js
+**Problem 06**:if no one node connect
+try restart node
+**... ...**
+**Problem 99999**:#$%#^#$%$@#&@#$@#$
+***Reshipment system | Start all over again***
+**Good Luck!**
