@@ -3,7 +3,7 @@
 Based on ubuntu18.10 OS
 ### Let’s start!
 #### Install Depends before play
-	sudo apt-get install git
+>sudo apt-get install git
 	sudoapt-get install -y nodejs 
 	sudoapt-get install -y npm
 	sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
