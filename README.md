@@ -6,7 +6,7 @@ Based on ubuntu18.10 OS
 
 ## **Let’s start!**
 ### Install Depends before play
-```bash
+	```bash
 	sudo apt-get install git
 	sudoapt-get install -y nodejs 
 	sudoapt-get install -y npm
@@ -18,7 +18,7 @@ Based on ubuntu18.10 OS
 	sudo cp solc-static-linux  /usr/bin/solc
 	sudo chmod +x /usr/bin/solc
 	sudo cnpm install -g ethereum-console
-```
+	```
 <br>
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
@@ -204,9 +204,9 @@ if want to deployment other contract, do it like this(is one way)
 
 Summarizes the train of thought
 ==============================
-First, docker is a convenient container that reduces many of the problems that arise in development testing and implementation deployment depending on the environment.While building bcos on docker can achieve a single machine with multiple nodes and only consume few resources. 
+*First, docker is a convenient container that reduces many of the problems that arise in development testing and implementation deployment depending on the environment.While building bcos on docker can achieve a single machine with multiple nodes and only consume few resources. 
 The second，bcos is an open source block chain project, it is relatively easy to build, as you understand the construction of the distributed system (such as DFS, KASS, Andrew). The structures, bcos more nodes are relatively easy to understand, the system proxy address, dfsNode, dfsGroup, networkid, since is a cluster, the conditions of the nodes need to be unified, to limit their position in the cluster.
-The last, if you want to understand it carefully    DO THIS [The white paper](https://github.com/bcosorg/bcos/blob/master/doc/manual/manual.md)
+The last, if you want to understand it carefully*    DO THIS [The white paper](https://github.com/bcosorg/bcos/blob/master/doc/manual/manual.md)
 *Maybe I'll do it more than once*
 <br>
 ## Problems That You May Have
