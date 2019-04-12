@@ -13,7 +13,7 @@ Based on ubuntu18.10 OS
 	sudoapt-get install -y npm
 	sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
 	sudo cnpm install -g babel-cli babel-preset-es2017
-	echo '{ "presets": ["es2017"] }' > ~/.babelrc	sudo npm install babel-cli
+	echo '{ "presets": ["es2017"] }' > ~/.babelrc	
 	sudo apt-get install cmake
 	wget https://github.com/ethereum/solidity/releases/download/v0.4.13/solc-static-linux
 	sudo cp solc-static-linux  /usr/bin/solc
