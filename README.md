@@ -5,6 +5,7 @@ Based on ubuntu18.10 OS
 <br>![ubuntu icon](./images/0.png)<br>
 
 ## **Let’s start!**
+
 ### Install Depends before play
 	```bash
 	sudo apt-get install git
@@ -19,12 +20,10 @@ Based on ubuntu18.10 OS
 	sudo chmod +x /usr/bin/solc
 	sudo cnpm install -g ethereum-console
 	```
-<br>
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
-<br>
+
 ①use packages repository
-<br>
 ```bash
 	$sudo apt-get install \
 	apt-transport-https \
@@ -76,15 +75,18 @@ Check docker status, like this:
 ![docker status](./images/2.png)<br>
 Please refer to the official website for more information.
 <br>
+
 ## Configuring Bcos
 Cloning file
 ```bash	
 	$git clone https://github.com/bcosorg/bcos
 ```
+
 <br>![cloing](./images/3.png)<br>
 ```bash
 	$cd bcos/docker
 ```
+
 Set genesis node config file into node-0
 ```bash	
 	$./scripts/genConfig.sh
@@ -204,9 +206,11 @@ if want to deployment other contract, do it like this(is one way)
 
 Summarizes the train of thought
 ==============================
-*First, docker is a convenient container that reduces many of the problems that arise in development testing and implementation deployment depending on the environment.While building bcos on docker can achieve a single machine with multiple nodes and only consume few resources. 
-The second，bcos is an open source block chain project, it is relatively easy to build, as you understand the construction of the distributed system (such as DFS, KASS, Andrew). The structures, bcos more nodes are relatively easy to understand, the system proxy address, dfsNode, dfsGroup, networkid, since is a cluster, the conditions of the nodes need to be unified, to limit their position in the cluster.
-The last, if you want to understand it carefully*    DO THIS [The white paper](https://github.com/bcosorg/bcos/blob/master/doc/manual/manual.md)
+*First, docker is a convenient container that reduces many of the problems that arise in development testing and implementation deployment depending on the environment.While building bcos on docker can achieve a single machine with multiple nodes and only consume few resources. *
+<br>
+*The second，bcos is an open source block chain project, it is relatively easy to build, as you understand the construction of the distributed system (such as DFS, KASS, Andrew). The structures, bcos more nodes are relatively easy to understand, the system proxy address, dfsNode, dfsGroup, networkid, since is a cluster, the conditions of the nodes need to be unified, to limit their position in the cluster.*
+<br>
+*The last, if you want to understand it carefully*    DO THIS [The white paper](https://github.com/bcosorg/bcos/blob/master/doc/manual/manual.md)
 *Maybe I'll do it more than once*
 <br>
 ## Problems That You May Have
