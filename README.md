@@ -65,13 +65,17 @@ You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 ```
 Check docker status, like this:
  (if you see anything like “Permission denied”,  maybe you need log back in)
-
+<br>![docker status](./images/1.png)<br>
+![docker status](./images/2.png)<br>
 Please refer to the official website for more information.
 
 ## Configuring Bcos
 Cloning file
 ```bash	
 	$git clone https://github.com/bcosorg/bcos
+```
+<br>![cloing](./images/3.png)<br>
+```bash
 	$cd bcos/docker
 ```
 Set Creation block config file into node-0
@@ -83,6 +87,7 @@ launch docker container
 ```bash
 	$ ./scripts/start_bcos_docker.sh $PWD/node-0
 ```
+<br>![start node-0](./images/4.png)<br>
  Correct state:
 
 ```bash
@@ -91,13 +96,14 @@ launch docker container
 	(sudo chown -R $USER:$(id -gn $USER) /home/xubi/.config)
 ```
 You can input again to check
-
+<br>![checking](./images/5.png)<br>
  modification bcos/docker/node-0/config.js  "Port": 35500”
 Of course, you can open the file to modify
 ```bash
 	$ sed -i 's/127.0.0.1:8545/127.0.0.1:35500/' config.js
 	$ babel-node deploy.js
 ```
+<br>![config](./images/6.png)<br>
 将输出中，SystemProxy合约地址记下来，例如 SystemProxy合约地址 0xff27dc5cc5144c626b9fdc26b2f292d9df062470
 修改docker/node-0/config.json中systemproxyaddress为上一步骤记录的SystemProxy合约地址 
 ```bash
