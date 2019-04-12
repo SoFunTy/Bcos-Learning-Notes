@@ -15,9 +15,9 @@ Based on ubuntu18.10 OS
 	sudo chmod +x /usr/bin/solc
 	sudo cnpm install -g ethereum-console
 
-##### Install Docker
-##### You can reference https://docs.docker.com/install/linux/docker-ce/ubuntu/
-##### use packages repository#
+### Install Docker
+###### You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
+###### use packages repository#
 	$sudo apt-get install \
 	apt-transport-https \
 	ca-certificates \
