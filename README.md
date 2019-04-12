@@ -77,7 +77,7 @@ Check docker status, like this:
  (if you see anything like “Permission denied”,  maybe you need log back in)
 <br>![docker status](./images/1.png)<br>
 ![docker status](./images/2.png)<br>
-Please refer to the official website for more information.
+*Please refer to the official website for more information.*
 <br>
 ***
 ## Configuring Bcos
@@ -112,6 +112,7 @@ launch docker container
 You can input again to check
 <br>![checking](./images/5.png)<br>
  modification bcos/docker/node-0/config.js  "Port": 35500”
+ <br>
 Of course, you can open the file to modify
 ```bash
 	$ sed -i 's/127.0.0.1:8545/127.0.0.1:35500/' config.js
@@ -120,6 +121,7 @@ Of course, you can open the file to modify
 <br>![config1](./images/6.png)<br>
 <br>![config2](./images/7.png)<br>
 best way is copy those into txt file or other
+<br>
 then alter bcos/docker/node-0/config.json systemproxyaddress to last step SystemProxy contract address
 ```bash
 	$ sed -i 's/"systemproxyaddress":"0x0"/"systemproxyaddress":"0xff27dc5cc5144c626b9fdc26b2f292d9df062470"/' ../docker/node-0/config.json
@@ -146,6 +148,8 @@ We can see $docker ps -a
 	$ cd bcos/docker
 ```
 -1.genConfig.sh are addition to genesis node and genesis node configuration paths
+
+
 Focus on genesis node create a new node
 ```bash
 	$ ./scripts/genConfig.sh 1 node-0
@@ -174,15 +178,24 @@ block growth indicates that the network is working properly
 ```
 end of the environment configuration
 ***
+
 ## Deployment contract
 contract file in bcos/tool/
+
 <br>![contract](./images/11.png)<br>
+
 Solidity toplink: https://solidity-cn.readthedocs.io/zh/develop/
+
 you can see HelloWorld.sol
+
 (bcos/tool/HelloWorld.sol)
+
 we need to change it for use
+
 because of the default grammar is out of date
+
 we need to change 
+
 ```bash
 	contract HelloWorld{
 	    string name;
@@ -206,8 +219,11 @@ Deployment contract, config.js *prot and ip* must be the same as bcos/docker/nod
 	$ babel-node deploy.sol HelloWorld
 ```
 <br>![contract](./images/16.png)<br>
+
 if want to deployment other contract, do it like this(is one way)
+
 **ps:** Hope this call you when you want quickStart.(maybe not well)
+
 ***
 Summarizes the train of thought
 ==============================
@@ -220,9 +236,12 @@ Summarizes the train of thought
 *Maybe I'll do it more than once*
 <br>
 ***
+
 ## Problems That You May Have
+
 **Problem 01**:if Command window allow say npm ERROR/ cnpm ERROR...
 search by Google or Baidu ... it will be more the solution
+
 **Problem 02**:if Command window allow say port is busy
 cheack you network and stat, can use
 
@@ -231,6 +250,7 @@ cheack you network and stat, can use
 	netstat -ap | grep $you port
 	kill -9 PID
 ```
+
 **Problem 03**:some dependent packages are not installed
 Make sure you have the first ones installed
 or you can insatll dependent packages by bcos/script/install_deps.sh
@@ -241,14 +261,20 @@ or you can insatll dependent packages by bcos/script/install_deps.sh
 	chmod +x scripts/install_deps.sh
 	./scripts/install_deps.sh
 ```
+
 **Problem 04**:if you see you contract compilation fails
 check contract version >=0.5.7
 you can check it in [remix](https://remix.ethereum.org/) easy
+
 **Problem 05**:if Unable to connect ip:prot
 check bcos/tool/config.js ip、prot the same as bcos/docker/node-0/config.js
+
 **Problem 06**:if no one node connect
 try restart node
+
 **... ...**
+
 **Problem 99999**:#$%#^#$%$@#&@#$@#$
 ***Reshipment system | Start all over again***
+
 **Good Luck!**
