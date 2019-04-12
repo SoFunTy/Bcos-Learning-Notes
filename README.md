@@ -33,10 +33,13 @@ You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 	gnupg-agent \
 	software-properties-common
 ```
+<br>
 ②Add Docker’s official GPG key
+<br>
 ```bash
 	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
 ```
+<br>
 ③by searching for the last 8 characters of the fingerprint.
 ```bash
 	$sudo apt-key fingerprint 0EBFCD88      
