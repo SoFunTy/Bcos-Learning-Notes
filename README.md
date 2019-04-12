@@ -2,7 +2,7 @@
 ====================
 Based on ubuntu18.10 OS
 
-<br>![ubuntu icon](./images/0.png)<br>
+<br>![ubuntu icon](./images/0.png)![ubuntu icon](./images/00.png)<br>
 
 ## **Let’s start!**
 
