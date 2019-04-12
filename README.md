@@ -22,7 +22,9 @@ Based on ubuntu18.10 OS
 <br>
 ## Install Docker
 You can Visit  https://docs.docker.com/install/linux/docker-ce/ubuntu/
+<br>
 ①use packages repository
+<br>
 ```bash
 	$sudo apt-get install \
 	apt-transport-https \
