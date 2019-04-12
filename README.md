@@ -1,7 +1,9 @@
 **Build bcos on docker**
 ====================
 Based on ubuntu18.10 OS
-![ubuntu icon](./images/0.png)
+
+<br>![ubuntu icon](./images/0.png)<br>
+
 **Let’s start!**
 #### Install Depends before play
 ```bash
